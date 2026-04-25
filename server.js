@@ -5,6 +5,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
+// ✅ THIS LINE MUST BE EXACT
 const API_TOKEN = process.env.API_TOKEN;
 
 app.get("/track", async (req, res) => {
@@ -28,6 +29,7 @@ app.get("/track", async (req, res) => {
     });
 
   } catch (err) {
+    console.log(err.response?.data || err.message); // 👈 helps debug
     res.status(500).json({ error: "Tracking failed" });
   }
 });
