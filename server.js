@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
-const API_TOKEN = process.env.277495f71bb285c4e10be9d96c4131151a156098;
+const API_TOKEN = process.env.API_TOKEN;
 
 app.get("/track", async (req, res) => {
   const awb = req.query.awb;
